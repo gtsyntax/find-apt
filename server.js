@@ -25,9 +25,8 @@ app.use(morgan('dev'));
 app.use(cors());
 
 // Routes
-app.get('/', (req, res, next) => {
-  res.json("Hello World");
-});
+const userRoutes = require('./routes/account');
+app.use('/api/accounts', userRoutes);
 
 
 // Server boot
